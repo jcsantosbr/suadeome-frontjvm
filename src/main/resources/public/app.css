@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(250, 250, 250);
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 14px;
+}
+
+.MainHeader {
+  color: rgb(255, 255, 255);
+  background-color: rgb(63, 81, 181);
+}
+
+.MainHeader-title {
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+  font-size: 4em;
+}
+
+.MainHeader-subTitle {
+  font-size: 1.75em;
+  font-weight: 100;
+  padding: 1em 0;
+}
+
+.ActionForm {
+  border: 1px solid rgb(204, 204, 204);
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 26);
+  padding: 2em;
+  margin-bottom: 16px;
+}
+
+.ActionForm-title {
+  font-size: 2em;
+  margin: 0;
+  margin-left: 8px;
+}
+
+.ActionForm-subTitle {
+  font-size: 1em;
+  margin: 0;
+  margin-left: 8px;
+}
+
+.RecomendationBox {
+  display: inline-block;
+  position: relative;
+  padding: 16px 8px 16px 0;
+  width: 100%;
+  font-size: 1.15em;
+}
+
+.RecomendationBox::after {
+  display: block;
+  width: 0px;
+  height: 0px;
+  content: "　";
+  position: absolute;
+  right: 0.5em;
+  top: 50%;
+  margin-top: -0.25em;
+  border-top: 0.5em solid #777777;
+  border-left: 0.5em solid transparent;
+  border-right: 0.5em solid transparent;
+  opacity: 0.5;
+
+  -moz-pointer-events: none;
+  -webkit-pointer-events: none;
+  pointer-events: none;
+}
+
+.RecomendationBox > .RecomendationType,
+.RecomendationBox > .RecomendationType--active {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 0.5em 2em 0.5em 0;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1em;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(0, 0, 26, .15);
+}
+
+.RecomendationBox > .RecomendationType {
+  color: rgba(0, 0, 26, .25);
+}
+
+.RecomendationBox > .RecomendationType--active {
+  color: rgba(0, 0, 26, 1);
+}
+
+.ButtonBox {
+  text-align: right;
+}
+
+.ButtonBox > .Button {
+  min-width: 100px;
+}
+
+.u-noMargin {
+  margin: 0;
+}
+
+.u-noPadding {
+  padding: 0;
+}
+
+@media screen and (max-width: 1260px) {
+  .MainHeader-subTitle {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 839px) {
+  .RecomendationBox {
+    padding-right: 0;
+  }
+}
+
+.success_notification {
+  color:green;
+}
+
+.failure_notification {
+  color:red;
+}

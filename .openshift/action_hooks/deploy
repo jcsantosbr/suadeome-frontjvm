@@ -1,0 +1,31 @@
+#!/bin/bash
+# This deploy hook gets executed after dependencies are resolved and the
+# build hook has been run but before the application has been started back
+# up again.  This script gets executed directly, so it could be python, php,
+# ruby, etc.
+set -x
+if [ ! -d $OPENSHIFT_DATA_DIR/jdk1.8.0_20 ]
+  then
+    cd $OPENSHIFT_DATA_DIR
+    wget http://www.java.net/download/jdk8u20/archive/b17/binaries/jdk-8u20-ea-bin-b17-linux-x64-04_jun_2014.tar.gz
+    tar xvf *.tar.gz
+    rm -f *.tar.gz
+fi
+
+if [ ! -d $OPENSHIFT_DATA_DIR/suadeome ]
+then
+  mkdir -p $OPENSHIFT_DATA_DIR/suadeome
+fi
+
+if [ ! -d $OPENSHIFT_DATA_DIR/suadeome_versions ]
+then
+  mkdir -p $OPENSHIFT_DATA_DIR/suadeome_versions
+fi
+
+export JAVA_HOME=$OPENSHIFT_DATA_DIR/jdk1.8.0_20
+export PATH=$JAVA_HOME/bin:$PATH
+
+cp $OPENSHIFT_DATA_DIR/suadeome_versions/suadeome-frontjvm-1.0-SNAPSHOT.jar $OPENSHIFT_DATA_DIRsuadeome/suadeome-frontjvm.jar
+
+source stop
+source start

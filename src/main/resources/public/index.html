@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="app.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <header class="MainHeader mdl-grid">
+      <h1 class="MainHeader-title mdl-cell mdl-cell--3-col">Serviços</h1>
+      <p class="MainHeader-subTitle mdl-cell mdl-cell--9-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+        um subtitulo legal pra chamar a atenção do usuário
+      </p>
+    </header>
+    <div id="notification_panel"></div>
+    <section class="mdl-grid">
+      <section class="mdl-grid mdl-cell mdl-cell--5-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+        <form id="form_search_recommendation" class="ActionForm mdl-cell mdl-cell--12-col-desktop mdl-cell--4-col-tablet">
+          <header class="mdl-cell mdl-cell--12-col">
+            <h2 class="ActionForm-title">Busque Serviços</h2>
+            <p class="ActionForm-subTitle">Um texto pro encher linguiça explicando a seção de busca</p>
+          </header>
+          <section class="mdl-cell mdl-cell--12-col">
+            <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input name="service" class="mdl-textfield__input" type="text" >
+              <label class="mdl-textfield__label" for="service">Nome do Serviço</label>
+            </div>
+
+            <div class="mdl-grid u-noPadding">
+              <div class="mdl-cell mdl-cell--8-col">
+                <div class="RecomendationBox">
+                  <select class="RecomendationType" name="search-service-recommendation" data-recommendation-types>
+                    <option value="none" disabled="disabled" selected="selected">Recomendações</option>
+                    <option value="contacts">Recomendado por Contatos</option>
+                    <option value="any">Qualquer Recomendação</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="ButtonBox mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--middle">
+                <button id="btn_search_recommendation" type="button" class="Button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                  Buscar
+                </button>
+              </div>
+            </div>
+          </section>
+        </form>
+
+        <form id="form_add_recommendation" class="ActionForm mdl-cell mdl-cell--12-col-desktop mdl-cell--4-col-tablet">
+          <header class="mdl-cell mdl-cell--12-col">
+            <h2 class="ActionForm-title">Recomende Serviços</h2>
+            <p class="ActionForm-subTitle">Um texto pro encher linguiça explicando a seção de recomendações</p>
+          </header>
+          <section class="mdl-cell mdl-cell--12-col">
+            <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input name="service" class="mdl-textfield__input" type="text" >
+              <label class="mdl-textfield__label" for="recommendation-service-name">Nome do Serviço</label>
+            </div>
+            <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+              <input name="name" class="mdl-textfield__input" type="text">
+              <label class="mdl-textfield__label" for="recommendation-service-person-name">Pessoa Prestadora do Serviço</label>
+            </div>
+
+            <div class="mdl-grid u-noPadding">
+              <div class="mdl-cell mdl-cell--8-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input name="phone" type="tel"  class="mdl-textfield__input">
+                <label class="mdl-textfield__label" for="recommendation-person-phone">Telefone</label>
+              </div>
+
+              <div class="ButtonBox mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet mdl-cell--middle">
+                <button id="btn_add_recommendation" type="button" class="Button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+                  Salvar
+                </button>
+              </div>
+            </div>
+          </section>
+        </form>
+      </section>
+      <section class="mdl-grid mdl-cell mdl-cell--7-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone">
+        <p> Conteúdo </p>
+      </section>
+    </section>
+  </body>
+</html>
