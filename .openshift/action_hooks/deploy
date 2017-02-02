@@ -25,7 +25,4 @@ fi
 export JAVA_HOME=$OPENSHIFT_DATA_DIR/jdk1.8.0_20
 export PATH=$JAVA_HOME/bin:$PATH
 
-cp $OPENSHIFT_DATA_DIR/suadeome_versions/suadeome-frontjvm-1.0-SNAPSHOT.jar $OPENSHIFT_DATA_DIRsuadeome/suadeome-frontjvm.jar
-
-source stop
-source start
+cp $OPENSHIFT_DATA_DIR/suadeome_versions/suadeome-frontjvm-1.0-SNAPSHOT.jar $OPENSHIFT_DATA_DIR/suadeome/suadeome-frontjvm.jar
