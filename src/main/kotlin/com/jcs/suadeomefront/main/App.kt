@@ -20,16 +20,16 @@ object App {
 
     private fun registerRoutes() {
         val externalPublic = getEnv("SPARK_EXTERNAL_PUBLIC_FOLDER", "")
+
         if (externalPublic.isBlank()) {
             logger.info("Using packaged public folder")
             staticFileLocation("/public")
-            staticFiles.expireTime(600);
+            staticFiles.expireTime(600)
         } else {
             logger.info("Using EXTERNAL public folder")
             externalStaticFileLocation(externalPublic);
+            staticFiles.expireTime(1)
         }
-
-        redirect.get("/", "/public/index.html")
 
         after(Filter { request, response -> response.header("Content-Encoding", "gzip") })
     }
